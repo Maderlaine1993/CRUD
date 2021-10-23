@@ -46,6 +46,18 @@ class UserController extends Controller
         Usuario::destroy($id);
         return back()->with('usuarioEliminado','Usuario Eliminado');
     }
+
+    public function editform($id){
+        $usuario=Usuario::findOrFail($id);
+        $rol=Rol::all();
+        return view('usuarios.editform', compact('usuario', 'rol'));
+    }
+
+    public function edit(Request $request,$id){
+        $dataUsuario=request()->except((['_token', '_method']));
+        Usuario::where('id','=', $id)->update($dataUsuario);
+        return back()->with('usuarioModificado', 'Usuario Modificado');
+    }
 }
 
 

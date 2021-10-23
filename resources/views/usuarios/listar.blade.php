@@ -29,6 +29,9 @@
                             <td>{{$user->email}}</td>
                             <td>{{$user->descripcion}}</td>
                             <td>
+                                <a class="btn btn-primary mb-2" href="{{route('editform', $user->id)}}">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </a>
                                 <form action="{{route('delete', $user->id)}}" method="POST">
                                     @csrf @method('DELETE')
                                     <button type="submit" onclick="return confirm('Desea eliminar el usuario')" class="btn btn-danger">

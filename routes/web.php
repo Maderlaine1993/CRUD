@@ -24,3 +24,10 @@ Route::post('/save', 'UserController@save') ->name('save');
 
 //Creando ruta para eliminar usuarios
 Route::delete('/delete/{id}', 'UserController@delete') ->name('delete');
+
+//Creando ruta para el formulario de editar usuarios
+Route::get('/editform/{id}', 'UserController@editform') ->name('editform');
+
+//Creando ruta para editar el usuario
+Route::patch('/edit/{id}', 'UserController@edit') -> name('edit');
+
