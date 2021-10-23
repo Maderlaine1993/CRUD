@@ -39,6 +39,17 @@
                             <input type="text" name="email" class="form-control col-md-9">
                         </div>
 
+                        <div class=" row form-group">
+                             <label for="" class="col-2">Rol</label>
+                                 <select name="id_rol" class="form-control col-md-9">
+                                     <option value="">--Seleccionar--</option>
+
+                                        @foreach( $rol as $roles)
+                                            <option value="{{$roles->id_rol}}"> {{$roles->descripcion}}  </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
                         <div class="row form-group">
                             <button type="submit" class="btn btn-success col-md-9 offset-2">Guardar</button>
                         </div>
@@ -52,5 +63,7 @@
         </div>
 
     </div>
+
+    <a class="btn btn-primary btn-xs mt-5" href="{{url('/')}}"> &laquo Volver</a>
 
 </div>
