@@ -48,8 +48,8 @@ class UserController extends Controller
     }
 
     public function editform($id){
-        $usuario=Usuario::findOrFail($id);
         $rol=Rol::all();
+        $usuario = Usuario::findOrFail($id);
         return view('usuarios.editform', compact('usuario', 'rol'));
     }
 

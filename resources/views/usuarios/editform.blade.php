@@ -41,7 +41,7 @@
 
                         <div class=" row form-group">
                             <label for="" class="col-2">Rol</label>
-                            <select name="id_rol" class="form-control col-md-9">
+                            <select name="rol_id" class="form-control col-md-9">
                                 <option value="{{$usuario->rol_id}}">--Seleccionar--</option>
 
                                 @foreach( $rol as $roles)
