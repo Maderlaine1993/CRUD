@@ -11,6 +11,20 @@
     </head>
 
     <body>
+    <nav class="navbar navbar-dark bg-primary ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{url('/')}}">
 
+                Usuarios
+             </a>
+            <a class="navbar-brand" href="{{url('/')}}">
+
+                Roles
+            </a>
+        </div>
+    </nav>
+    <div class="container">
+        @yield('content')
+    </div>
     </body>
 </html>

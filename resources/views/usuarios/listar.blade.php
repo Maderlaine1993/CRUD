@@ -1,5 +1,5 @@
 @extends('layouts.base')
-
+@section('content')
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-10">
@@ -29,7 +29,8 @@
                             <td>{{$user->email}}</td>
                             <td>{{$user->descripcion}}</td>
                             <td>
-                                <a class="btn btn-primary mb-2" href="{{route('editform', $user->id)}}">
+                                <div class="btn-group">
+                                <a class="btn btn-primary mb-2 mr-3" href="{{route('editform', $user->id)}}">
                                     <i class="fas fa-pencil-alt"></i>
                                 </a>
                                 <form action="{{route('delete', $user->id)}}" method="POST">
@@ -38,6 +39,7 @@
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
                                 </form>
+                                </div>
                             </td>
                         </tr>
                     @endforeach
@@ -49,6 +51,7 @@
     </div>
 
 </div>
+@endsection
 
 
 
