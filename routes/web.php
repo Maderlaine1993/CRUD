@@ -21,3 +21,6 @@ Route::get('/form','UserController@userform');
 
 //Creando ruta de guardar usuarios
 Route::post('/save', 'UserController@save') ->name('save');
+
+//Creando ruta para eliminar usuarios
+Route::delete('/delete/{id}', 'UserController@delete') ->name('delete');
