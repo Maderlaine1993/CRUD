@@ -6,6 +6,7 @@ use App\Models\Rol;
 use App\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -67,6 +68,14 @@ class UserController extends Controller
     //Creamos funcion para modificar el usuario
     public function edit(Request $request,$id){
         $dataUsuario=request()->except((['_token', '_method']));
+
+        //Subimos la imagen ingresada para el usuario
+        if($request->hasFile('imagen')){
+            $usuario = Usuario::findOrFail($id);
+            Storage::delete('public/'.$usuario->imagen);
+            $dataUsuario['imagen']= $request->file('imagen')->store('imagenes', 'public');
+        }
+
         Usuario::where('id','=', $id)->update($dataUsuario);
         return back()->with('usuarioModificado', 'Usuario Modificado');
     }

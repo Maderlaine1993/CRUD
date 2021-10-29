@@ -24,9 +24,9 @@
 
 
             <div class="card">
-                <form action="{{ route('edit', $usuario->id)}}" method="POST">
+                <form action="{{ route('edit', $usuario->id)}}" method="POST" enctype="multipart/form-data">
                     @csrf @method('PATCH')
-                    <div class="card-header text-center">Modificar Usuario</div>
+                    <div class="card-header text-center"> Modificar Usuario</div>
 
                     <div class="card-body">
                         <div class="row form-group">
@@ -37,6 +37,18 @@
                         <div class="row form-group">
                             <label for="" class="col-2">Email</label>
                             <input type="text" name="email" class="form-control col-md-9" value="{{$usuario->email}}">
+                        </div>
+
+                        <div class="row form-group" >
+                            <label for="" class="col-2 font-weight-bold">Imagen</label>
+                            <div class="custom-file col-md-9">
+                                <input type="file" name="imagen" class="custom-file-input">
+                                <label class="custom-file-label text-center" for="inputGroupFile04"> Subir imagen </label>
+                            </div>
+                        </div>
+
+                        <div>
+                            <img src="{{asset('storage').'/'.$usuario->imagen}}" width="75">
                         </div>
 
                         <div class=" row form-group">
