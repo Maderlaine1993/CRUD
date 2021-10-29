@@ -18,6 +18,7 @@
                     <tr class="table-secondary font-weight-bold">
                         <td>Nombre</td>
                         <td>Email</td>
+                        <td>Imagen</td>
                         <td>Rol</td>
                         <td>Acciones</td>
                     </tr>
@@ -27,6 +28,9 @@
                         <tr>
                             <td>{{$user->nombre}}</td>
                             <td>{{$user->email}}</td>
+                            <td>
+                                <img src="{{asset('storage').'/'.$user->imagen}}" width="75">
+                            </td>
                             <td>{{$user->descripcion}}</td>
                             <td>
                                 <div class="btn-group">
