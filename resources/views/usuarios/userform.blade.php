@@ -24,23 +24,31 @@
 
 
             <div class="card">
-                <form action="{{ url('/save')}}" method="POST">
+                <form action="{{ url('/save')}}" method="POST" enctype="multipart/form-data">
                 @csrf
-                    <div class="card-header text-center">AGREGAR USUARIO</div>
+                    <div class="card-header text-center font-weight-bold">AGREGAR USUARIO</div>
 
                     <div class="card-body">
                         <div class="row form-group">
-                            <label for="" class="col-2">Nombre</label>
+                            <label for="" class="col-2 font-weight-bold">Nombre</label>
                             <input type="text" name="nombre" class="form-control col-md-9">
                         </div>
 
                         <div class="row form-group">
-                            <label for="" class="col-2">Email</label>
+                            <label for="" class="col-2 font-weight-bold" >Email</label>
                             <input type="text" name="email" class="form-control col-md-9">
                         </div>
 
+                        <div class="row form-group">
+                            <label for="" class="col-2 font-weight-bold">Imagen</label>
+                            <div class="custom-file col-md-9">
+                                <input type="file" name="imagen" class="custom-file-input">
+                                <label class="custom-file-label text-center" for="inputGroupFile04"> Subir imagen </label>
+                            </div>
+                        </div>
+
                         <div class=" row form-group">
-                             <label for="" class="col-2">Rol</label>
+                             <label for="" class="col-2 font-weight-bold">Rol</label>
                                  <select name="id_rol" class="form-control col-md-9">
                                      <option value="">--Seleccionar--</option>
 
@@ -51,7 +59,7 @@
                                 </div>
 
                         <div class="row form-group">
-                            <button type="submit" class="btn btn-success col-md-9 offset-2">Guardar</button>
+                            <button type="submit" class="btn btn-success col-md-9 offset-2 font-weight-bold">Guardar</button>
                         </div>
 
                     </div>
