@@ -23,7 +23,7 @@
             @endif
 
 
-            <div class="card">
+            <div class="card" >
                 <form action="{{ url('/save')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                     <div class="card-header text-center font-weight-bold">AGREGAR USUARIO</div>
@@ -71,8 +71,6 @@
         </div>
 
     </div>
-
-    <a class="btn btn-primary btn-xs mt-5" href="{{url('/')}}"> &laquo Volver</a>
 
 </div>
 @endsection

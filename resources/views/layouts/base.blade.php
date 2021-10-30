@@ -11,20 +11,29 @@
     </head>
 
     <body>
-    <nav class="navbar navbar-dark bg-primary ">
+    <nav class="navbar navbar-dark bg-primary">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{url('/')}}">
 
                 Usuarios
              </a>
-            <a class="navbar-brand" href="{{url('/')}}">
+            <div>
+                <img src="https://encuestasumgblog.files.wordpress.com/2017/04/logopngumg1.png?w=645" width="100">
+            </div>
+            <a class="navbar-brand" href="{{url('/listarol')}}" >
 
                 Roles
             </a>
         </div>
     </nav>
+
     <div class="container">
         @yield('content')
     </div>
+
+    <div class="imagen-center">
+        <img src="https://encuestasumgblog.files.wordpress.com/2017/04/logopngumg1.png?w=645">
+    </div>
+
     </body>
 </html>

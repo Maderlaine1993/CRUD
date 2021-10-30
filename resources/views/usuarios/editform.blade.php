@@ -26,33 +26,32 @@
             <div class="card">
                 <form action="{{ route('edit', $usuario->id)}}" method="POST" enctype="multipart/form-data">
                     @csrf @method('PATCH')
-                    <div class="card-header text-center"> Modificar Usuario</div>
+                    <div class="card-header text-center font-weight-bold"> Modificar Usuario</div>
 
                     <div class="card-body">
                         <div class="row form-group">
-                            <label for="" class="col-2">Nombre</label>
+                            <label for="" class="col-2 font-weight-bold">Nombre</label>
                             <input type="text" name="nombre" class="form-control col-md-9" value="{{$usuario->nombre}}">
                         </div>
 
                         <div class="row form-group">
-                            <label for="" class="col-2">Email</label>
+                            <label for="" class="col-2 font-weight-bold">Email</label>
                             <input type="text" name="email" class="form-control col-md-9" value="{{$usuario->email}}">
                         </div>
 
                         <div class="row form-group" >
                             <label for="" class="col-2 font-weight-bold">Imagen</label>
-                            <div class="custom-file col-md-9">
+                            <div class="col-md-2 ">
+                                <img src="{{asset('storage').'/'.$usuario->imagen}}" width="80">
+                            </div>
+                            <div class="custom-file col-md-7">
                                 <input type="file" name="imagen" class="custom-file-input">
                                 <label class="custom-file-label text-center" for="inputGroupFile04"> Subir imagen </label>
                             </div>
                         </div>
 
-                        <div>
-                            <img src="{{asset('storage').'/'.$usuario->imagen}}" width="75">
-                        </div>
-
                         <div class=" row form-group">
-                            <label for="" class="col-2">Rol</label>
+                            <label for="" class="col-2 font-weight-bold">Rol</label>
                             <select name="rol_id" class="form-control col-md-9">
                                 <option value="{{$usuario->rol_id}}">--Seleccionar--</option>
 
@@ -75,8 +74,6 @@
         </div>
 
     </div>
-
-    <a class="btn btn-primary btn-xs mt-5" href="{{url('/')}}"> &laquo Volver</a>
 
 </div>
 @endsection

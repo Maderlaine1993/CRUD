@@ -3,8 +3,8 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-10">
-           <h2 class="text-center mb-3"> Usuarios Guardados </h2>
-            <a class="btn btn-success mb-5" href="{{url('/form') }}"> Agregar usuario </a>
+           <h2 class="text-center font-weight-bold mb-3"> Usuarios Guardados </h2>
+            <a class="btn btn-success font-weight-bold mb-5" href="{{url('/form') }}"> Agregar usuario </a>
 
             <!--Mensaje Flash-->
             @if(session('usuarioEliminado'))
@@ -13,9 +13,9 @@
                 </div>
             @endif
 
-            <table class="table table-bordered table-striped text-center">
+            <table class="table table-bordered table-striped table-light table-hover text-center">
                 <thead>
-                    <tr class="table-secondary font-weight-bold">
+                    <tr class="table-info font-weight-bold">
                         <td>Nombre</td>
                         <td>Email</td>
                         <td>Imagen</td>

@@ -31,3 +31,5 @@ Route::get('/editform/{id}', 'UserController@editform') ->name('editform');
 //Creando ruta para editar el usuario
 Route::patch('/edit/{id}', 'UserController@edit') -> name('edit');
 
+//Creando ruta para listado de roles
+Route::get('/listarol', 'RolController@lista');
